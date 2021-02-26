@@ -30,7 +30,7 @@ U 1 1 603D0C13
 P 6150 1850
 F 0 "SW1" H 6150 2135 50  0000 C CNN
 F 1 "SW_DPDT_x2" H 6150 2044 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_CuK_JS202011AQN_DPDT_Angled" H 6150 1850 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_E-Switch_EG1271_DPDT" H 6150 1850 50  0001 C CNN
 F 3 "~" H 6150 1850 50  0001 C CNN
 	1    6150 1850
 	1    0    0    -1  
@@ -41,7 +41,7 @@ U 2 1 603D134D
 P 6150 2400
 F 0 "SW1" H 6150 2685 50  0000 C CNN
 F 1 "SW_DPDT_x2" H 6150 2594 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_CuK_JS202011AQN_DPDT_Angled" H 6150 2400 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_E-Switch_EG1271_DPDT" H 6150 2400 50  0001 C CNN
 F 3 "~" H 6150 2400 50  0001 C CNN
 	2    6150 2400
 	1    0    0    -1  
@@ -229,29 +229,29 @@ Wire Wire Line
 	5950 1950 5950 1850
 NoConn ~ 6350 1750
 NoConn ~ 6350 2300
-NoConn ~ 2600 4750
-NoConn ~ 2600 4650
-NoConn ~ 2600 4550
+NoConn ~ 2600 5050
+NoConn ~ 2600 4950
+NoConn ~ 2600 4850
 NoConn ~ 2600 4450
 NoConn ~ 2600 4350
 Wire Wire Line
-	4150 3600 7400 3600
+	4450 3600 7400 3600
 Wire Wire Line
 	7400 3600 7400 3850
 Wire Wire Line
-	4150 3700 7300 3700
+	4450 3700 7300 3700
 Wire Wire Line
 	7300 3700 7300 3950
 Wire Wire Line
 	7300 3950 7400 3950
 Wire Wire Line
-	4150 3900 7000 3900
+	4450 3900 7000 3900
 Wire Wire Line
 	7000 3900 7000 4150
 Wire Wire Line
 	7000 4150 7400 4150
 Wire Wire Line
-	4150 4000 6900 4000
+	4450 4000 6900 4000
 Wire Wire Line
 	6900 4000 6900 4250
 Wire Wire Line
@@ -260,4 +260,48 @@ NoConn ~ 2600 3600
 NoConn ~ 2600 3700
 Wire Wire Line
 	5300 1950 5300 2100
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 6045C837
+P 8750 1300
+F 0 "H1" H 8850 1346 50  0000 L CNN
+F 1 "MountingHole" H 8850 1255 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.1mm" H 8750 1300 50  0001 C CNN
+F 3 "~" H 8750 1300 50  0001 C CNN
+	1    8750 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 6045FDF6
+P 8750 1500
+F 0 "H2" H 8850 1546 50  0000 L CNN
+F 1 "MountingHole" H 8850 1455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.1mm" H 8750 1500 50  0001 C CNN
+F 3 "~" H 8750 1500 50  0001 C CNN
+	1    8750 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 604606C8
+P 8750 1700
+F 0 "H3" H 8850 1746 50  0000 L CNN
+F 1 "MountingHole" H 8850 1655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.1mm" H 8750 1700 50  0001 C CNN
+F 3 "~" H 8750 1700 50  0001 C CNN
+	1    8750 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 60460CF8
+P 8750 1900
+F 0 "H4" H 8850 1946 50  0000 L CNN
+F 1 "MountingHole" H 8850 1855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.1mm" H 8750 1900 50  0001 C CNN
+F 3 "~" H 8750 1900 50  0001 C CNN
+	1    8750 1900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
