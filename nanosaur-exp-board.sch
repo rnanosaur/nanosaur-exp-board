@@ -19,7 +19,7 @@ U 1 1 60396740
 P 3550 4550
 F 0 "J1" H 3900 3300 50  0000 L CNN
 F 1 "jetson_nano" H 3750 3400 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical" H 3800 4250 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x21_P2.54mm_Vertical" H 3800 4250 50  0001 C CNN
 F 3 "" H 3800 4250 50  0001 C CNN
 	1    3550 4550
 	1    0    0    -1  
@@ -52,7 +52,7 @@ U 1 1 603D58E4
 P 5300 1750
 F 0 "J2" V 5550 1800 50  0000 R CNN
 F 1 "Screw_Terminal_01x02" V 5450 2150 50  0000 R CNN
-F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 5300 1750 50  0001 C CNN
+F 2 "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal" H 5300 1750 50  0001 C CNN
 F 3 "~" H 5300 1750 50  0001 C CNN
 	1    5300 1750
 	0    -1   -1   0   
