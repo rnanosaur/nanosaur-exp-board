@@ -1,0 +1,17 @@
+kibot:
+  version: 1
+  
+preflight:
+  run_erc: true
+  update_xml: true
+  run_drc: false
+  check_zone_fills: true
+  ignore_unconnected: false
+
+outputs:
+  - name: 'print_sch'
+    comment: "Print schematic (PDF)"
+    type: pdf_sch_print
+    dir: output
+    options:
+      output: Schematic.pdf
