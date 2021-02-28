@@ -1,6 +1,10 @@
 name: "Kibot builder"
 
 on:
+  workflow_dispatch:
+    paths:
+    - '**.sch'
+    - '**.kicad_pcb'
   push:
     paths:
     - '**.sch'
@@ -11,7 +15,7 @@ on:
       - '**.kicad_pcb'
 
 jobs:
-  kibot:
+  export:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
