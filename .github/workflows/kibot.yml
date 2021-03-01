@@ -19,6 +19,10 @@ jobs:
         schema: '*.sch'
       # optional - PCB design file
         board: '*.kicad_pcb'
+    - name: Combine PDFs
+      shell: bash
+      run: |
+        bash scripts/combine_pdf.sh docs/pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
@@ -30,14 +34,11 @@ jobs:
     needs: [export]
     runs-on: ubuntu-latest #self-hosted
     steps:
+      - uses: actions/checkout@v2
       - name: Extract artifact
         uses: actions/download-artifact@v2
         with:
           name: docs
-      - name: Combine PDFs
-        shell: bash
-        run: |
-          bash scripts/combine_pdf.sh docs/pdf
       - name: Push assets
         shell: bash
         run: |
