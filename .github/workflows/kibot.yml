@@ -19,6 +19,11 @@ jobs:
         schema: '*.sch'
       # optional - PCB design file
         board: '*.kicad_pcb'
+    - name: Combine PDFs
+      id: combine
+      uses: amoeba/combine-pdf-action@v1
+      with:
+        path: docs/pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
@@ -37,9 +42,8 @@ jobs:
       - shell: bash
         run: |
           set -x
-          ls docs
           assets=()
-          for asset in ./*.md; do
+          for asset in ./docs/img/*.svg; do
             assets+=("-a" "$asset")
           done
           echo "${assets[@]}"

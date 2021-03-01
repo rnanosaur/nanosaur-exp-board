@@ -2,12 +2,14 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=kicad
 
 ### Kibot output ###
-
+*-drc.txt
 *-erc.txt
+kibot_errors.filter
 
 ## Output folder
 output/
 docs/
+Example/
 
 ### KiCad ###
 # For PCBs designed using KiCad: http://www.kicad-pcb.org/

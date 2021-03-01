@@ -2,24 +2,31 @@ kibot:
   version: 1
   
 preflight:
-  run_erc: true
-  update_xml: true
-  run_drc: false
+  # [boolean=false] Zones are filled before doing any operation involving PCB layers.
   check_zone_fills: true
+  # [list(dict)] A list of entries to filter out ERC/DRC messages.
+  # filters: 
+  #   - filter: 'Filter description'
+  #     error: '10'
+  #     regex: 'Regular expression to match'
+  # [boolean=false] Option for `run_drc`. Ignores the unconnected nets. Useful if you didn't finish the routing.
   ignore_unconnected: false
+  # [boolean=false] Runs the DRC (Distance Rules Check). To ensure we have a valid PCB.
+  # The report file name is controlled by the global output pattern (%i=drc %x=txt).
+  run_drc: false
+  # [boolean=false] Runs the ERC (Electrical Rules Check). To ensure the schematic is electrically correct.
+  # The report file name is controlled by the global output pattern (%i=erc %x=txt).
+  run_erc: true
+  # [boolean=false] Update the XML version of the BoM (Bill of Materials).
+  # To ensure our generated BoM is up to date.
+  # Note that this isn't needed when using the internal BoM generator (`bom`).
+  update_xml: true
 
 outputs:
   - name: 'print schema'
     comment: "Print schematic (PDF)"
     type: pdf_sch_print
-    dir: docs
-    options:
-      output: '%p-Schematic.%x'
-      
-  - name: 'print schema'
-    comment: "Print schematic (SVG)"
-    type: svg_sch_print
-    dir: docs
+    dir: 'docs/pdf'
     options:
       output: '%p-Schematic.%x'
 
@@ -27,11 +34,10 @@ outputs:
     comment: "Print board (PDF) front"
     type: pdf_pcb_print
     layers:
-      - 'user'
       - layer: Edge.Cuts
       - layer: F.CrtYd
       - layer: F.Fab
-    dir: docs
+    dir: 'docs/pdf'
     options:
       output: '%p-Board_top.%x'
 
@@ -42,9 +48,16 @@ outputs:
       - layer: Edge.Cuts
       - layer: B.CrtYd
       - layer: B.Fab
-    dir: docs
+    dir: 'docs/pdf'
     options:
       output: '%p-Board_bottom.%x'
+
+  - name: 'print schema'
+    comment: "Print schematic (SVG)"
+    type: svg_sch_print
+    dir: 'docs'
+    options:
+      output: '%p-Schematic.%x'
 
   # PcbDraw - Beautiful 2D PCB render:
   # Uses configurable colors.
