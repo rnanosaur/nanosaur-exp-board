@@ -9,9 +9,122 @@ preflight:
   ignore_unconnected: false
 
 outputs:
-  - name: 'print_sch'
+  - name: 'print schema'
     comment: "Print schematic (PDF)"
     type: pdf_sch_print
-    dir: output
+    dir: docs
     options:
-      output: Schematic.pdf
+      output: '%p-Schematic.%x'
+      
+  - name: 'print schema'
+    comment: "Print schematic (SVG)"
+    type: svg_sch_print
+    dir: docs
+    options:
+      output: '%p-Schematic.%x'
+
+  - name: 'print board'
+    comment: "Print board (PDF) front"
+    type: pdf_pcb_print
+    layers:
+      - 'user'
+      - layer: Edge.Cuts
+      - layer: F.CrtYd
+      - layer: F.Fab
+    dir: docs
+    options:
+      output: '%p-Board_top.%x'
+
+  - name: 'print board'
+    comment: "Print board (PDF) bottom"
+    type: pdf_pcb_print
+    layers:
+      - layer: Edge.Cuts
+      - layer: B.CrtYd
+      - layer: B.Fab
+    dir: docs
+    options:
+      output: '%p-Board_bottom.%x'
+
+  # PcbDraw - Beautiful 2D PCB render:
+  # Uses configurable colors.
+  # Can also render the components if the 2D models are available
+  - name: 'plot images of pcb TOP'
+    comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
+    type: 'pcbdraw'
+    dir: 'docs/img'
+    options:
+      # [boolean=false] render the bottom side of the board (default is top side)
+      bottom: false
+      # [number=300] [10,1200] dots per inch (resolution) of the generated image
+      dpi: 300
+      # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
+      format: 'svg'
+      # [list(string)] list of components to highlight
+      # highlight:
+      # [list(string)] list of libraries
+      libs: ['/opt/pcbdraw/lib']
+      # [boolean=false] mirror the board
+      mirror: false
+      # [boolean=false] do not make holes transparent
+      no_drillholes: false
+      # [string='%f-%i.%x'] name for the generated file . Affected by global options
+      output: '%f-Board_%i.%x'
+      # [boolean=false] show placeholder for missing components
+      placeholder: false
+      # [dict|None] replacements for PCB references using components (lib:component)
+      remap:
+      # [string|list(string)] [none,all] list of components to draw, can be also a string for none or all.
+      # The default is none
+      show_components: none
+      # [string|dict] PCB style (colors). An internal name, the name of a JSON file or the style options
+      style: '/opt/pcbdraw/pcbdraw/styles/jlcpcb-green-enig.json'
+      # [boolean=false] render V-CUTS on the Cmts.User layer
+      vcuts: false
+      # [string='visible'] [visible,all,none] using visible only the warnings about components in the visible side are generated
+      warnings: 'visible'
+
+  - name: 'plot images of pcb BOTTOM'
+    comment: 'Exports the PCB as a 2D model (SVG, PNG or JPG).'
+    type: 'pcbdraw'
+    dir: 'docs/img'
+    options:
+      # [boolean=false] render the bottom side of the board (default is top side)
+      bottom: true
+      # [number=300] [10,1200] dots per inch (resolution) of the generated image
+      dpi: 300
+      # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
+      format: 'svg'
+      # [list(string)] list of components to highlight
+      # highlight:
+      # [list(string)] list of libraries
+      libs: ['/opt/pcbdraw/lib']
+      # [boolean=false] mirror the board
+      mirror: false
+      # [boolean=false] do not make holes transparent
+      no_drillholes: false
+      # [string='%f-%i.%x'] name for the generated file . Affected by global options
+      output: '%f-Board_%i.%x'
+      # [boolean=false] show placeholder for missing components
+      placeholder: false
+      # [dict|None] replacements for PCB references using components (lib:component)
+      remap:
+      # [string|list(string)] [none,all] list of components to draw, can be also a string for none or all.
+      # The default is none
+      show_components: none
+      # [string|dict] PCB style (colors). An internal name, the name of a JSON file or the style options
+      style: '/opt/pcbdraw/pcbdraw/styles/jlcpcb-green-enig.json'
+      # [boolean=false] render V-CUTS on the Cmts.User layer
+      vcuts: false
+      # [string='visible'] [visible,all,none] using visible only the warnings about components in the visible side are generated
+      warnings: 'visible'
+
+  - name: Step
+    comment: "Generate 3D model (STEP)"
+    type: step
+    dir: docs/CAD
+    options:
+      metric_units: true
+      origin: grid         # "grid" or "drill" o "X,Y" i.e. 3.2,-10
+      no_virtual: true     # exclude 3D models for components with 'virtual' attribute
+      output: '%f.%x'
