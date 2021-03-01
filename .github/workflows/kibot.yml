@@ -37,7 +37,7 @@ jobs:
       - name: Combine PDFs
         shell: bash
         run: |
-          apt install -y poppler poppler-utils
+          sudo apt install -y poppler poppler-utils
           cd pdf
           ls
           pdfunite combined.pdf
