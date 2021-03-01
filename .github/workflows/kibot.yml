@@ -19,11 +19,6 @@ jobs:
         schema: '*.sch'
       # optional - PCB design file
         board: '*.kicad_pcb'
-    - name: Combine PDFs
-      id: combine_schematics
-      uses: amoeba/combine-pdf-action@v1
-      with:
-        path: pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
@@ -39,6 +34,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: docs
+      - name: Combine PDFs
+        shell: bash
+        run: |
+          apt install -y poppler poppler-utils
+          cd pdf
+          ls
+          pdfunite combined.pdf
       - shell: bash
         run: |
           set -x
