@@ -36,9 +36,13 @@ jobs:
           name: docs
       - shell: bash
         run: |
-          ls
+          set -x
           ls docs
-          ls docs/img
+          assets=()
+          for asset in ./*.md; do
+            assets+=("-a" "$asset")
+          done
+          echo "${assets[@]}"
 
   release:
     name: release version
