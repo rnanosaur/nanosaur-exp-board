@@ -30,12 +30,19 @@
 
 FOLDER_INPUT=$1
 
+ls
+echo "-----------------"
+ls $FOLDER_INPUT
+echo "-----------------"
+
 # Load all image
 assets=()
 for asset in ./$FOLDER_INPUT/img/*.svg; do
   assets+=("-a" "$asset")
 done
 
+echo "${assets[@]}"
+
 # Push release
-tag_name="${GITHUB_REF##*/}"
-hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
+#tag_name="${GITHUB_REF##*/}"
+#hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
