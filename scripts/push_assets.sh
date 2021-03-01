@@ -24,11 +24,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-echo $(ls ./docs)
 
-assets=()
-for asset in ./docs/*.svg; do
+
+# https://github.com/actions/upload-release-asset/issues/28#issuecomment-617208601
+
+FOLDER_INPUT=./$1
+
+# Load all image
+assets=("-a" "$FOLDER_INPUT/pdf/combined.pdf")
+for asset in $FOLDER_INPUT/img/*.svg; do
   assets+=("-a" "$asset")
 done
 
-echo "${assets[@]}"
+# Push release
+tag_name="${GITHUB_REF##*/}"
+hub release create "${assets[@]}" -m "$tag_name" "$tag_name"

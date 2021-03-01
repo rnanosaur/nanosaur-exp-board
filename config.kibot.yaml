@@ -55,7 +55,7 @@ outputs:
   - name: 'print schema'
     comment: "Print schematic (SVG)"
     type: svg_sch_print
-    dir: 'docs'
+    dir: 'docs/img'
     options:
       output: '%p-Schematic.%x'
 
