@@ -1,21 +1,8 @@
 name: "Kibot builder"
 
-on:
-  workflow_dispatch:
-    paths:
-    - '**.sch'
-    - '**.kicad_pcb'
-    - 'config.kibot.yaml'
-  push:
-    paths:
-    - '**.sch'
-    - '**.kicad_pcb'
-    - 'config.kibot.yaml'
-  pull_request:
-    paths:
-      - '**.sch'
-      - '**.kicad_pcb'
-      - 'config.kibot.yaml'
+# Reference:
+# https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
+on: [push, pull_request]
 
 jobs:
   export:
