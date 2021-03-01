@@ -37,18 +37,11 @@ jobs:
       - name: Combine PDFs
         shell: bash
         run: |
-          sudo apt install -y poppler-utils
-          cd pdf
-          ls
-          pdfunite combined.pdf
-      - shell: bash
+          bash scripts/combine_pdf.sh docs/pdf
+      - name: Push assets
+        shell: bash
         run: |
-          set -x
-          assets=()
-          for asset in ./docs/img/*.svg; do
-            assets+=("-a" "$asset")
-          done
-          echo "${assets[@]}"
+          bash scripts/push_assets.sh
 
   release:
     name: release version
