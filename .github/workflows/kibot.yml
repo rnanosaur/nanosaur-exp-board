@@ -30,25 +30,6 @@ jobs:
         name: docs
         path: docs
 
-  test:
-    name: test version
-    needs: [export]
-    runs-on: ubuntu-latest #self-hosted
-    steps:
-      - uses: actions/checkout@v2
-      - name: Extract artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
-      - name: Push assets
-        shell: bash
-        run: |
-          ls
-          echo "-----------------"
-          ls docs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   release:
     name: release version
     if: startsWith(github.ref, 'refs/tags/')
@@ -63,7 +44,7 @@ jobs:
       - name: Push assets
         shell: bash
         run: |
-          bash scripts/push_assets.sh docs
+          bash scripts/push_assets.sh docs/docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
