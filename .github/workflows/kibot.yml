@@ -20,9 +20,10 @@ jobs:
       # optional - PCB design file
         board: '*.kicad_pcb'
     - name: Combine PDFs
-      shell: bash
-      run: |
-        bash scripts/combine_pdf.sh docs/docs/pdf
+      id: combine
+      uses: amoeba/combine-pdf-action@v1
+      with:
+        path: docs/docs/pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
