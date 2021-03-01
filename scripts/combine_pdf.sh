@@ -27,10 +27,12 @@
 FOLDER_COMBINE=$1
 
 # Install poppler
-sudo apt install -y poppler poppler-utils
+sudo apt install -y poppler-utils
 
 # Move to pdf folder to combine
-cd $FOLDER_COMBINE
+ls docs
+ls $FOLDER_COMBINE
+cd docs
 ls
 
 # Combine pdf
