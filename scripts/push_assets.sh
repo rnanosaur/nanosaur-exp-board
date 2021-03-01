@@ -34,6 +34,8 @@ ls
 echo "-----------------"
 ls $FOLDER_INPUT
 echo "-----------------"
+ls $FOLDER_INPUT/pdf
+echo "-----------------"
 
 # Load all image
 assets=()

@@ -43,7 +43,7 @@ jobs:
       - name: Push assets
         shell: bash
         run: |
-          bash scripts/push_assets.sh docs/docs
+          bash scripts/push_assets.sh docs
 
   release:
     name: release version
