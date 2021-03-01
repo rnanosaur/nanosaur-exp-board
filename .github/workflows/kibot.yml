@@ -37,3 +37,34 @@ jobs:
       with:
         name: docs
         path: docs
+
+  release:
+    name: release version
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [export]
+    runs-on: ubuntu-latest #self-hosted
+    steps:
+      - name: Extract artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: true
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./docs/docs/nanosaur-exp-board-Board_bottom.svg
+          asset_name: docs/docs/nanosaur-exp-board-Board_bottom.svg
+          asset_content_type: application/svg
