@@ -20,10 +20,10 @@ jobs:
       # optional - PCB design file
         board: '*.kicad_pcb'
     - name: Combine PDFs
-      id: combine
+      id: combine_schematics
       uses: amoeba/combine-pdf-action@v1
       with:
-        path: docs/pdf
+        path: pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
