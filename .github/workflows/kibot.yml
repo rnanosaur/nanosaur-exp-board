@@ -22,7 +22,7 @@ jobs:
     - name: Combine PDFs
       shell: bash
       run: |
-        bash scripts/combine_pdf.sh docs/pdf
+        bash scripts/combine_pdf.sh docs/docs/pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
