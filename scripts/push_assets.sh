@@ -30,15 +30,11 @@
 
 FOLDER_INPUT=$1
 
-ls
-echo "-----------------"
 ls $FOLDER_INPUT
-echo "-----------------"
-ls $FOLDER_INPUT/pdf
 echo "-----------------"
 
 # Load all image
-assets=()
+assets=("-a" "./$FOLDER_INPUT/pdf/combined.pdf")
 for asset in ./$FOLDER_INPUT/img/*.svg; do
   assets+=("-a" "$asset")
 done
@@ -46,5 +42,5 @@ done
 echo "${assets[@]}"
 
 # Push release
-#tag_name="${GITHUB_REF##*/}"
-#hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
+tag_name="${GITHUB_REF##*/}"
+hub release create "${assets[@]}" -m "$tag_name" "$tag_name"
