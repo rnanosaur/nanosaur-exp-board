@@ -25,15 +25,33 @@ jobs:
       uses: amoeba/combine-pdf-action@v1
       with:
         path: docs/docs/pdf
-    - name: Convert SVG
-      shell: bash
-      run: |
-        bash scripts/convert_pdf.sh docs/docs/pdf/nanosaur-exp-board-Schematic.pdf docs/docs/img/nanosaur-exp-board-Schematic.png
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
         name: docs
         path: docs
+
+  test:
+    name: test push to website
+    needs: [export]
+    runs-on: ubuntu-latest #self-hosted
+    steps:
+      # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
+      - name: Extract artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'docs/img'
+          destination_repo: 'rnanosaur/rnanosaur.github.io'
+          destination_folder: 'assets/docs/expansion-board'
+          user_email: 'raffaello@rnext.it'
+          user_name: 'raffaello'
+          commit_message: 'Push updated expansion board images'
 
   release:
     name: release version

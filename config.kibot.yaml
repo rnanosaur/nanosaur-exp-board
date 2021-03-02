@@ -52,12 +52,12 @@ outputs:
     options:
       output: '%p-Board_bottom.%x'
 
-  #- name: 'print schema'
-  #  comment: "Print schematic (SVG)"
-  #  type: svg_sch_print
-  #  dir: 'docs/img'
-  #  options:
-  #    output: '%p-Schematic.%x'
+  - name: 'print schema'
+    comment: "Print schematic (SVG)"
+    type: svg_sch_print
+    dir: 'docs/img'
+    options:
+      output: '%p-Schematic.%x'
 
   # PcbDraw - Beautiful 2D PCB render:
   # Uses configurable colors.
@@ -72,7 +72,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'png'
+      format: 'svg'
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
@@ -107,7 +107,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'png'
+      format: 'svg'
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
