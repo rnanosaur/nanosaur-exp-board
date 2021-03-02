@@ -50,7 +50,7 @@ jobs:
           destination_repo: 'rnanosaur/rnanosaur.github.io'
           destination_folder: 'assets/docs/expansion-board'
           user_email: 'raffaello@rnext.it'
-          user_name: 'raffaello'
+          user_name: 'rbonghi'
           commit_message: 'Push updated expansion board images'
 
   release:
