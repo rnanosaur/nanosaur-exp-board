@@ -1,4 +1,5 @@
 # :sauropod: nanosaur expansion board
+[![Kibot builder](https://github.com/rnanosaur/nanosaur-exp-board/actions/workflows/kibot.yml/badge.svg)](https://github.com/rnanosaur/nanosaur-exp-board/actions/workflows/kibot.yml)
 
 NanoSaur is a little tracked robot ROS2 enabled, made for an NVIDIA Jetson Nano
 
