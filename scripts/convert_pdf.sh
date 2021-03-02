@@ -24,15 +24,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-FOLDER_COMBINE=$1
+# https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image
+
+PDF_PATH=$1
+PNG_PATH=$2
 
 # Install poppler
 sudo apt install -y poppler-utils
 
-# Move to pdf folder to combine
-cd $FOLDER_COMBINE
-echo "----------------------------------"
-ls
-
 # Combine pdf
-pdfunite * combined.pdf
+pdftoppm $PDF_PATH $PNG_PATH -png

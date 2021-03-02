@@ -19,11 +19,16 @@ jobs:
         schema: '*.sch'
       # optional - PCB design file
         board: '*.kicad_pcb'
+    # https://github.com/amoeba/combine-pdf-action
     - name: Combine PDFs
       id: combine
       uses: amoeba/combine-pdf-action@v1
       with:
         path: docs/docs/pdf
+    - name: Convert SVG
+      shell: bash
+      run: |
+        bash scripts/convert_pdf.sh docs/docs/pdf/nanosaur-exp-board-Schematic.pdf docs/docs/img/nanosaur-exp-board-Schematic.png
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
@@ -37,6 +42,7 @@ jobs:
     runs-on: ubuntu-latest #self-hosted
     steps:
       - uses: actions/checkout@v2
+      # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
       - name: Extract artifact
         uses: actions/download-artifact@v2
         with:

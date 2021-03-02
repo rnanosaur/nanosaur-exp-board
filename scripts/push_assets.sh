@@ -35,7 +35,7 @@ echo "-----------------"
 
 # Load all image
 assets=("-a" "./$FOLDER_INPUT/pdf/combined.pdf")
-for asset in ./$FOLDER_INPUT/img/*.svg; do
+for asset in ./$FOLDER_INPUT/img/*.png; do
   assets+=("-a" "$asset")
 done
 
