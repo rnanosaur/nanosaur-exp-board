@@ -76,7 +76,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Upload Release PDF Asset
-        id: upload-release-asset 
+        id: upload-release-pdf-asset 
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -88,7 +88,7 @@ jobs:
           asset_name: combined.pdf
           asset_content_type: application/pdf
       - name: Upload Release STEP Asset
-        id: upload-release-asset 
+        id: upload-release-step-asset 
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
