@@ -31,8 +31,9 @@ jobs:
         name: docs
         path: docs
 
-  test:
-    name: test push to website
+  images:
+    name: Push new images to NanoSaur website
+    if: startsWith(github.ref, 'refs/tags/')
     needs: [export]
     runs-on: ubuntu-latest #self-hosted
     steps:
@@ -41,7 +42,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: docs
-      - name: Pushes test file
+      - name: Pushes SVG images
         uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -51,7 +52,7 @@ jobs:
           destination_folder: 'assets/docs/expansion-board'
           user_email: 'raffaello@rnext.it'
           user_name: 'rbonghi'
-          commit_message: 'Push updated expansion board images'
+          commit_message: '🚀 Push updated images NanoSaur expansion board'
 
   release:
     name: release version
@@ -59,16 +60,43 @@ jobs:
     needs: [export]
     runs-on: ubuntu-latest #self-hosted
     steps:
-      - uses: actions/checkout@v2
       # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
       - name: Extract artifact
         uses: actions/download-artifact@v2
         with:
           name: docs
-      - name: Push assets
-        shell: bash
-        run: |
-          bash scripts/push_assets.sh docs
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload Release PDF Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`.
+          # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./docs/pdf/combined.pdf
+          asset_name: combined.pdf
+          asset_content_type: application/pdf
+      - name: Upload Release STEP Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`.
+          # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./docs/CAD/nanosaur-exp-board.step
+          asset_name: nanosaur-exp-board.step
+          asset_content_type: application/step
 
