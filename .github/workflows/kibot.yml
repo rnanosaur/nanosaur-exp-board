@@ -2,7 +2,22 @@ name: "Kibot builder"
 
 # Reference:
 # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    paths:
+    - '**.sch'
+    - '**.kicad_pcb'
+    - 'config.kibot.yaml'
+  push:
+    paths:
+    - '**.sch'
+    - '**.kicad_pcb'
+    - 'config.kibot.yaml'
+  pull_request:
+    paths:
+      - '**.sch'
+      - '**.kicad_pcb'
+      - 'config.kibot.yaml'
 
 jobs:
   export:
@@ -47,9 +62,9 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'docs/img'
+          source_file: 'docs/expansion-board'
           destination_repo: 'rnanosaur/rnanosaur.github.io'
-          destination_folder: 'assets/docs/expansion-board'
+          destination_folder: 'assets/docs'
           user_email: 'raffaello@rnext.it'
           user_name: 'rbonghi'
           commit_message: '🚀 Push updated images NanoSaur expansion board'
