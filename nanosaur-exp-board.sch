@@ -304,4 +304,15 @@ F 3 "~" H 8750 1900 50  0001 C CNN
 	1    8750 1900
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector_Generic:Conn_01x10 J?
+U 1 1 6039E639
+P 8550 4300
+F 0 "J?" H 8630 4292 50  0000 L CNN
+F 1 "Conn_01x10" H 8630 4201 50  0000 L CNN
+F 2 "" H 8550 4300 50  0001 C CNN
+F 3 "~" H 8550 4300 50  0001 C CNN
+	1    8550 4300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
