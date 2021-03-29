@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name nanosaur)(type Legacy)(uri ${KIPRJMOD}/library/nanosaur.lib)(options "")(descr ""))
+  (lib (name 25336NA6)(type Legacy)(uri ${KIPRJMOD}/library/25336NA6.lib)(options "")(descr ""))
 )

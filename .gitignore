@@ -1,17 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/kicad
 # Edit at https://www.toptal.com/developers/gitignore?templates=kicad
 
-### Kibot output ###
-*-drc.txt
-*-erc.txt
-kibot_errors.filter
-example_template.kibot.yaml
-
-## Output folder
-output/
-docs/
-Example/
-
 ### KiCad ###
 # For PCBs designed using KiCad: http://www.kicad-pcb.org/
 # Format documentation: http://kicad-pcb.org/help/file-formats/
@@ -22,7 +11,6 @@ Example/
 *.bck
 *.kicad_pcb-bak
 *.sch-bak
-*.pro-bak
 *~
 _autosave-*
 *.tmp
@@ -51,4 +39,3 @@ bom/
 out/
 
 # End of https://www.toptal.com/developers/gitignore/api/kicad
-
