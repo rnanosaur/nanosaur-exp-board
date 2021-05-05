@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L NVIDIAJetson:jetson_nano J1
-U 1 1 60396740
-P 4400 4400
-F 0 "J1" H 5150 3150 50  0000 L CNN
-F 1 "jetson_nano" H 5000 3250 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x21_P2.54mm_Vertical" H 4650 4100 50  0001 C CNN
-F 3 "" H 4650 4100 50  0001 C CNN
-	1    4400 4400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:Screw_Terminal_01x02 J2
 U 1 1 603D58E4
 P 5250 1400
@@ -577,4 +566,15 @@ F 3 "" H 7100 4600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7350 4600 7100 4600
+$Comp
+L NVIDIAJetson:jetson_nano J1
+U 1 1 60932AD4
+P 4400 4400
+F 0 "J1" H 5200 3150 50  0000 C CNN
+F 1 "jetson_nano" H 5150 3250 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 4150 4250 50  0001 C CNN
+F 3 "" H 4150 4250 50  0001 C CNN
+	1    4400 4400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

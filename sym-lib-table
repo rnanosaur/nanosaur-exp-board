@@ -1,4 +1,3 @@
 (sym_lib_table
-  (lib (name nanosaur)(type Legacy)(uri ${KIPRJMOD}/library/nanosaur.lib)(options "")(descr ""))
-  (lib (name nanosaur-exp-board-rescue)(type Legacy)(uri ${KIPRJMOD}/nanosaur-exp-board-rescue.lib)(options "")(descr ""))
+  (lib (name NVIDIAJetson)(type Legacy)(uri ${KIPRJMOD}/library/NVIDIAJetson.lib)(options "")(descr ""))
 )
