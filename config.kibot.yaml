@@ -41,6 +41,7 @@ outputs:
     dir: 'docs/pdf'
     options:
       output: '%p-Board_top.%x'
+      drill_marks: full
 
   - name: 'print board'
     comment: "Print board (PDF) bottom"
@@ -53,6 +54,7 @@ outputs:
     dir: 'docs/pdf'
     options:
       output: '%p-Board_bottom.%x'
+      drill_marks: full
 
   - name: 'print schema'
     comment: "Print schematic (SVG)"
@@ -216,3 +218,69 @@ outputs:
       origin: grid         # "grid" or "drill" o "X,Y" i.e. 3.2,-10
       no_virtual: true     # exclude 3D models for components with 'virtual' attribute
       output: '%f.%x'
+      
+  # Gerber format:
+  # This output is what you get from the File/Plot menu in pcbnew.
+  - name: 'gerber'
+    comment: 'This is the main fabrication format for the PCB.'
+    type: 'gerber'
+    dir: 'docs/gerber'
+    options:
+      # [boolean=true] Creates a file with information about all the generated gerbers.
+      # You can use it in gerbview to load all gerbers at once
+      create_gerber_job_file: true
+      # [list(dict)] A list of customized reports for the manufacturer
+      custom_reports:
+        # [string=''] Content for the report. Use ${basename} for the project name without extension.
+        # Use ${filename(LAYER)} for the file corresponding to LAYER
+        - content: ''
+          # [string='Custom_report.txt'] File name for the custom report
+          output: 'Custom_report.txt'
+      # [boolean=false] Disable aperture macros (workaround for buggy CAM software) (KiCad 6)
+      disable_aperture_macros: false
+      # [string|list(string)=''] Name of the filter to mark components as not fitted.
+      # A short-cut to use for simple cases where a variant is an overkill
+      dnf_filter: ''
+      # [string=''] Used to configure the edge cuts layer extension for Protel mode. Include the dot
+      edge_cut_extension: ''
+      # [boolean=true] Do not include the PCB edge layer
+      exclude_edge_layer: true
+      # [boolean=false] Do not plot the component pads in the silk screen (KiCad 5.x only)
+      exclude_pads_from_silkscreen: false
+      # [boolean=false] Include references and values even when they are marked as invisible
+      force_plot_invisible_refs_vals: false
+      # [string='%f-%i%v.%x'] Name for the gerber job file (%i='job', %x='gbrjob'). Affected by global options
+      gerber_job_file: '%f-%i%v.%x'
+      # [number=4.6] This the gerber coordinate format, can be 4.5 or 4.6
+      gerber_precision: 4.6
+      # [string=''] Used to change the Protel style extensions for inner layers.
+      # The replacement pattern can contain %n for the inner layer number and %N for the layer number.
+      # Example '.g%n'
+      inner_extension_pattern: ''
+      # [number=0.1] [0.02,2] Line_width for objects without width [mm] (KiCad 5)
+      line_width: 0.1
+      # [string='%f-%i%v.%x'] Output file name, the default KiCad name if empty. Affected by global options
+      output: '%f-%i%v.%x'
+      # [boolean=true] Include the footprint references
+      plot_footprint_refs: true
+      # [boolean=true] Include the footprint values
+      plot_footprint_values: true
+      # [boolean=false] Currently without effect
+      plot_sheet_reference: false
+      # [boolean=false] Substract the solder mask from the silk screen
+      subtract_mask_from_silk: false
+      # [boolean=true] Cover the vias
+      tent_vias: true
+      # [boolean=false] Use uppercase names for the extensions
+      uppercase_extensions: false
+      # [boolean=false] Use the auxiliary axis as origin for coordinates
+      use_aux_axis_as_origin: false
+      # [boolean=true] Include netlist metadata
+      use_gerber_net_attributes: true
+      # [boolean=true] Use the extended X2 format (otherwise use X1 formerly RS-274X)
+      use_gerber_x2_attributes: true
+      # [boolean=false] Use legacy Protel file extensions
+      use_protel_extensions: false
+      # [string=''] Board variant to apply
+      variant: ''
+    layers: all
