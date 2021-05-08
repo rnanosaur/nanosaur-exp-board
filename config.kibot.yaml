@@ -122,7 +122,7 @@ outputs:
       # [boolean=false] do not make holes transparent
       no_drillholes: false
       # [string='%f-%i.%x'] name for the generated file . Affected by global options
-      output: '%f-Board_%i.%x'
+      output: '%f-Board_%i_components.%x'
       # [boolean=false] show placeholder for missing components
       placeholder: false
       # [dict|None] replacements for PCB references using components (lib:component)
@@ -192,7 +192,7 @@ outputs:
       # [boolean=false] do not make holes transparent
       no_drillholes: false
       # [string='%f-%i.%x'] name for the generated file . Affected by global options
-      output: '%f-Board_%i.%x'
+      output: '%f-Board_%i_components.%x'
       # [boolean=false] show placeholder for missing components
       placeholder: false
       # [dict|None] replacements for PCB references using components (lib:component)

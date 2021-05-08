@@ -69,6 +69,29 @@ jobs:
           user_name: 'rbonghi'
           commit_message: '🚀 Push updated images NanoSaur expansion board'
 
+  bom:
+    name: Push thbe updated BOM to NanoSaur website
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [export]
+    runs-on: ubuntu-latest #self-hosted
+    steps:
+      # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
+      - name: Extract artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
+      - name: Pushes CSV BOM
+        uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'nanosaur-exp-board.csv'
+          destination_repo: 'rnanosaur/rnanosaur.github.io'
+          destination_folder: '_data'
+          user_email: 'raffaello@rnext.it'
+          user_name: 'rbonghi'
+          commit_message: '🚀 Push updated BOM NanoSaur expansion board'
+
   release:
     name: release version
     if: startsWith(github.ref, 'refs/tags/')
