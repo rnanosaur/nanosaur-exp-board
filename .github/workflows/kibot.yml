@@ -46,8 +46,8 @@ jobs:
         name: docs
         path: docs
 
-  images:
-    name: Push new images to NanoSaur website
+  website:
+    name: Push new data to NanoSaur website
     if: startsWith(github.ref, 'refs/tags/')
     needs: [export]
     runs-on: ubuntu-latest #self-hosted
@@ -57,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: docs
-      - name: Pushes SVG images
+      - name: Push SVG images
         uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -68,19 +68,7 @@ jobs:
           user_email: 'raffaello@rnext.it'
           user_name: 'rbonghi'
           commit_message: '🚀 Push updated images NanoSaur expansion board'
-
-  bom:
-    name: Push the updated BOM to NanoSaur website
-    if: startsWith(github.ref, 'refs/tags/')
-    needs: [export]
-    runs-on: ubuntu-latest #self-hosted
-    steps:
-      # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
-      - name: Extract artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
-      - name: Pushes CSV BOM
+      - name: Push CSV BOM
         uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
