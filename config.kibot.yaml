@@ -153,7 +153,7 @@ outputs:
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
-      # libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
+      libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
       # [boolean=false] mirror the board
       mirror: false
       # [boolean=false] do not make holes transparent
@@ -188,7 +188,7 @@ outputs:
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
-      # libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
+      libs: ['/usr/share/pcbdraw/footprints/KiCAD-base']
       # [boolean=false] mirror the board
       mirror: false
       # [boolean=false] do not make holes transparent
