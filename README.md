@@ -8,16 +8,20 @@ NanoSaur is a little tracked robot ROS2 enabled, made for an NVIDIA Jetson Nano
 * For technical details follow [wiki](https://github.com/rnanosaur/nanosaur/wiki)
 * Something wrong? Open an [issue](https://github.com/rnanosaur/nanosaur/issues)
 
-
 # NVIDIA Jetson Reference
 
-* https://www.jetsonhacks.com/nvidia-jetson-nano-j41-header-pinout/
+* Jetsonhacks [Jetson Nano pinout](https://www.jetsonhacks.com/nvidia-jetson-nano-j41-header-pinout/)
 
-# Schematics
+# Expansion board reference
 
-The Nanosaur Expansion board use from the NVIDIA Jetson Nano board:
-* SPI0
-* SPI1
-* 2 GPIO
+Watch the documentation on [nanosaur expansion board](https://nanosaur.ai/expansion-board/)
 
 <img src="https://nanosaur.ai/assets/docs/expansion-board/img/nanosaur-exp-board-Schematic.svg" alt="test svg">
+
+# Develop
+
+The documentation is made using [Kicad](https://www.kicad.org/) 5
+
+The CI is made using
+* [Kibot](https://github.com/INTI-CMNB/KiBot)
+* [kicad-exports](https://github.com/nerdyscout/kicad-exports)
