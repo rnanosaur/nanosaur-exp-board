@@ -1,4 +1,4 @@
-update=Venerdì 07 Maggio 2021 12:46:51
+update=Sat 08 May 2021 10:49:59 PM BST
 version=1
 last_client=kicad
 [general]
@@ -25,7 +25,7 @@ ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=nanosaur-exp-board.net
+LastNetListRead=
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -40,7 +40,9 @@ MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
 TrackWidth1=0.25
 TrackWidth2=0.2
-TrackWidth3=0.4
+TrackWidth3=0.35
+TrackWidth4=0.45
+TrackWidth5=1.3
 ViaDiameter1=0.8
 ViaDrill1=0.4
 dPairWidth1=0.2
@@ -249,9 +251,20 @@ dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
+Name=3.3 line
+Clearance=0.2
+TrackWidth=0.45
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/2]
 Name=POWER
 Clearance=0.2
-TrackWidth=0.35
+TrackWidth=1.3
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3

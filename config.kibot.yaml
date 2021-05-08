@@ -76,7 +76,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'svg'
+      format: 'png'
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
@@ -114,7 +114,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'svg'
+      format: 'png'
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
@@ -149,7 +149,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'svg'
+      format: 'png'
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries
@@ -184,7 +184,7 @@ outputs:
       # [number=300] [10,1200] dots per inch (resolution) of the generated image
       dpi: 300
       # [string='svg'] [svg,png,jpg] output format. Only used if no `output` is specified
-      format: 'svg'
+      format: 'png'
       # [list(string)] list of components to highlight
       # highlight:
       # [list(string)] list of libraries

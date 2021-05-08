@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "Expansion board"
 Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Rev "1"
+Comp "nanosaur"
+Comment1 "Raffaello Bonghi"
 Comment2 ""
 Comment3 ""
 Comment4 ""

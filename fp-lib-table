@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name Button_Switch)(type KiCad)(uri ${KIPRJMOD}/Button_Switch.pretty)(options "")(descr ""))
+  (lib (name nanosaur)(type KiCad)(uri ${KIPRJMOD}/nanosaur.pretty)(options "")(descr ""))
 )
