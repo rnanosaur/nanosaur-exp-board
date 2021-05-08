@@ -13,7 +13,7 @@ preflight:
   ignore_unconnected: false
   # [boolean=false] Runs the DRC (Distance Rules Check). To ensure we have a valid PCB.
   # The report file name is controlled by the global output pattern (%i=drc %x=txt).
-  run_drc: false
+  run_drc: true
   # [boolean=false] Runs the ERC (Electrical Rules Check). To ensure the schematic is electrically correct.
   # The report file name is controlled by the global output pattern (%i=erc %x=txt).
   run_erc: true
