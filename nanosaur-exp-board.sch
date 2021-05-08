@@ -193,7 +193,7 @@ L Connector_Generic:Conn_01x04 J3
 U 1 1 6093D807
 P 8200 2350
 F 0 "J3" H 8280 2342 50  0000 L CNN
-F 1 "Conn_oled_right" H 8280 2251 50  0000 L CNN
+F 1 "Conn_01x04" H 8280 2251 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 2350 50  0001 C CNN
 F 3 "~" H 8200 2350 50  0001 C CNN
 	1    8200 2350
@@ -204,7 +204,7 @@ L Connector_Generic:Conn_01x04 J4
 U 1 1 60940252
 P 8200 3000
 F 0 "J4" H 8280 2992 50  0000 L CNN
-F 1 "Conn_oled_left" H 8280 2901 50  0000 L CNN
+F 1 "Conn_01x04" H 8280 2901 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 3000 50  0001 C CNN
 F 3 "~" H 8200 3000 50  0001 C CNN
 	1    8200 3000
@@ -215,7 +215,7 @@ L Connector_Generic:Conn_01x04 J5
 U 1 1 60940935
 P 8200 3650
 F 0 "J5" H 8280 3642 50  0000 L CNN
-F 1 "Conn_motors" H 8280 3551 50  0000 L CNN
+F 1 "Conn_01x04" H 8280 3551 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 3650 50  0001 C CNN
 F 3 "~" H 8200 3650 50  0001 C CNN
 	1    8200 3650
