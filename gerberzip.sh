@@ -77,7 +77,7 @@ main()
 
     local pwd=$(pwd)
 
-    local path="docs/docs"
+    local path="docs/docs/gerber"
     
     echo "Make zip with all gerber files"
     # echo $(ls -p $path | grep -v / )
@@ -85,9 +85,9 @@ main()
     # Show documents
     ls
     # Make zip file
-    zip -r -D $zip_name .
+    sudo zip -r -D $zip_name .
     # Move to main folder
-    mv $zip_name $pwd
+    sudo mv $zip_name $pwd/docs/docs
 
 }
 
