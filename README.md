@@ -16,7 +16,15 @@ NanoSaur is a little tracked robot ROS2 enabled, made for an NVIDIA Jetson Nano
 
 Watch the documentation on [nanosaur expansion board](https://nanosaur.ai/expansion-board/)
 
-<img src="https://nanosaur.ai/assets/docs/expansion-board/img/nanosaur-exp-board-Schematic.svg" alt="test svg">
+<img src="https://nanosaur.ai/assets/docs/expansion-board/Expansion board-Schematic.svg" alt="Schematic expansion board">
+
+## PCB
+
+Layout PCB
+
+<img src="https://nanosaur.ai/assets/docs/expansion-board/nanosaur-exp-board-Board_top.svg" alt="PCB Top expansion board">
+
+<img src="https://nanosaur.ai/assets/docs/expansion-board/nanosaur-exp-board-Board_bottom.svg" alt="PCB Bottom expansion board">
 
 # Develop
 
