@@ -684,4 +684,6 @@ Wire Notes Line
 	9150 3400 7400 3400
 Wire Notes Line
 	7400 3400 7400 2800
+Text Notes 8550 3000 0    50   ~ 0
+Optional\nI2C
 $EndSCHEMATC

@@ -40,11 +40,17 @@ jobs:
       uses: amoeba/combine-pdf-action@v1
       with:
         path: docs/docs/pdf
+    - name: Make gerber zip
+      uses: papeloto/action-zip@v1
+      with:
+        files: docs/gerber
+        dest: gerber.zip
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
         name: docs
         path: docs
+
 
   website:
     name: Push new data to NanoSaur website
