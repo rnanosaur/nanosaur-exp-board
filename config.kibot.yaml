@@ -284,3 +284,22 @@ outputs:
       # [string=''] Board variant to apply
       variant: ''
     layers: all
+    
+  - name: 'Gerber drills'
+    comment: 'Gerber drill files'
+    type: 'gerb_drill'
+    dir: 'docs/gerber'
+    options:
+      use_aux_axis_as_origin: true
+      output: '%f-%i.%x'
+
+  - name: 'Excellon drills'
+    comment: 'Excellon drill files'
+    type: 'excellon'
+    dir: 'docs/gerber'
+    options:
+      use_aux_axis_as_origin: true
+      metric_units: true
+      pth_and_npth_single_file: false
+      minimal_header: true
+      mirror_y_axis: false

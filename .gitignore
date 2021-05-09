@@ -11,6 +11,7 @@ example_template.kibot.yaml
 output/
 docs/
 Example/
+gerber.zip
 
 ### KiCad ###
 # For PCBs designed using KiCad: http://www.kicad-pcb.org/
