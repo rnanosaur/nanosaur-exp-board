@@ -40,6 +40,10 @@ jobs:
       uses: amoeba/combine-pdf-action@v1
       with:
         path: docs/docs/pdf
+    - name: Build project # This would actually build your project, using zip for an example artifact
+      run: |
+        bash gerberzip.sh
+        mv gerber.zip docs/docs/
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
@@ -104,9 +108,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: docs
-      - name: Build project # This would actually build your project, using zip for an example artifact
-        run: |
-          bash gerberzip.sh
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -146,6 +147,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./gerber.zip
+          asset_path: ./docs/gerber.zip
           asset_name: gerber.zip
           asset_content_type: application/zip

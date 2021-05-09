@@ -77,7 +77,7 @@ main()
 
     local pwd=$(pwd)
 
-    local path="docs/gerber"
+    local path="docs/docs/gerber"
     
     echo "Make zip with all gerber files"
     # echo $(ls -p $path | grep -v / )
