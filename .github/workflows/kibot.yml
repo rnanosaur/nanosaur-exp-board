@@ -43,8 +43,8 @@ jobs:
     - name: Make gerber zip
       uses: papeloto/action-zip@v1
       with:
-        files: docs/gerber
-        dest: gerber.zip
+        files: docs/docs/gerber
+        dest: docs/docs/gerber.zip
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
