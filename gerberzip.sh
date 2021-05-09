@@ -82,6 +82,8 @@ main()
     echo "Make zip with all gerber files"
     # echo $(ls -p $path | grep -v / )
     cd $path
+    # Show documents
+    ls
     # Make zip file
     zip -r -D $zip_name .
     # Move to main folder
