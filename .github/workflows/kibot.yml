@@ -40,6 +40,9 @@ jobs:
       uses: amoeba/combine-pdf-action@v1
       with:
         path: docs/docs/pdf
+    - run: |
+         ls
+         ls docs
     - name: Make gerber zip
       uses: papeloto/action-zip@v1
       with:
