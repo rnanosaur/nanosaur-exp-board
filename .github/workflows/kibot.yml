@@ -140,7 +140,7 @@ jobs:
           asset_name: nanosaur-exp-board.step
           asset_content_type: application/step
       - name: Upload Release gerber.zip Asset
-        id: upload-release-step-asset 
+        id: upload-release-gerber-asset 
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
