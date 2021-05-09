@@ -114,7 +114,7 @@ jobs:
           # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
           asset_path: ./docs/pdf/combined.pdf
-          asset_name: combined.pdf
+          asset_name: nanosaur-schematic.pdf
           asset_content_type: application/pdf
       - name: Upload Release STEP Asset
         id: upload-release-step-asset 
@@ -134,5 +134,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
           asset_path: ./docs/gerber.zip
-          asset_name: gerber.zip
+          asset_name: nanosaur-gerber.zip
           asset_content_type: application/zip
