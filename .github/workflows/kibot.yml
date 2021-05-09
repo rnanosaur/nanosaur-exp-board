@@ -4,20 +4,20 @@ name: "Kibot builder"
 # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
 on:
   workflow_dispatch:
-    paths:
-    - '**.sch'
-    - '**.kicad_pcb'
-    - 'config.kibot.yaml'
+#    paths:
+#    - '**.sch'
+#    - '**.kicad_pcb'
+#    - 'config.kibot.yaml'
   push:
-    paths:
-    - '**.sch'
-    - '**.kicad_pcb'
-    - 'config.kibot.yaml'
+#    paths:
+#    - '**.sch'
+#    - '**.kicad_pcb'
+#    - 'config.kibot.yaml'
   pull_request:
-    paths:
-      - '**.sch'
-      - '**.kicad_pcb'
-      - 'config.kibot.yaml'
+#    paths:
+#      - '**.sch'
+#      - '**.kicad_pcb'
+#      - 'config.kibot.yaml'
 
 jobs:
   export:
@@ -43,7 +43,7 @@ jobs:
     - name: Make gerber zip
       uses: papeloto/action-zip@v1
       with:
-        files: docs/docs/gerber
+        files: docs/docs/gerber/
         dest: docs/docs/gerber.zip
     - name: upload results
       uses: actions/upload-artifact@v2
