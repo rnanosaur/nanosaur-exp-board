@@ -41,8 +41,9 @@ jobs:
       with:
         path: docs/docs/pdf
     - run: |
-         ls
          ls docs
+         echo "-------------"
+         ls docs/docs
     - name: Make gerber zip
       uses: papeloto/action-zip@v1
       with:
