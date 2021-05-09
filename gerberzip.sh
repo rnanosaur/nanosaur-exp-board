@@ -85,7 +85,7 @@ main()
     # Show documents
     ls
     # Make zip file
-    sudo zip -r -D $zip_name .
+    zip -r -D $zip_name .
     # Move to main folder
     mv $zip_name $pwd
 
