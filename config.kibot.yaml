@@ -228,14 +228,7 @@ outputs:
     options:
       # [boolean=true] Creates a file with information about all the generated gerbers.
       # You can use it in gerbview to load all gerbers at once
-      create_gerber_job_file: true
-      # [list(dict)] A list of customized reports for the manufacturer
-      custom_reports:
-        # [string=''] Content for the report. Use ${basename} for the project name without extension.
-        # Use ${filename(LAYER)} for the file corresponding to LAYER
-        - content: ''
-          # [string='Custom_report.txt'] File name for the custom report
-          output: 'Custom_report.txt'
+      create_gerber_job_file: false
       # [boolean=false] Disable aperture macros (workaround for buggy CAM software) (KiCad 6)
       disable_aperture_macros: false
       # [string|list(string)=''] Name of the filter to mark components as not fitted.
@@ -283,15 +276,16 @@ outputs:
       use_protel_extensions: false
       # [string=''] Board variant to apply
       variant: ''
-    layers: all
-    
-  - name: 'Gerber drills'
-    comment: 'Gerber drill files'
-    type: 'gerb_drill'
-    dir: 'docs/gerber'
-    options:
-      use_aux_axis_as_origin: true
-      output: '%f-%i.%x'
+    layers:
+      - layer: F.Cu
+      - layer: F.Mask
+      - layer: F.SilkS
+      - layer: F.Paste
+      - layer: B.Cu
+      - layer: B.Mask
+      - layer: B.SilkS
+      - layer: B.Paste
+      - layer: Edge.Cuts
 
   - name: 'Excellon drills'
     comment: 'Excellon drill files'
