@@ -628,7 +628,7 @@ F 0 "J7" H 8280 2992 50  0000 L CNN
 F 1 "Conn_01x04" H 8280 2901 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 3000 50  0001 C CNN
 F 3 "~" H 8200 3000 50  0001 C CNN
-F 4 "Pin Header (optional*)" H 8200 3000 50  0001 C CNN "Component"
+F 4 "Pin Header 1x3 (optional*)" H 8200 3000 50  0001 C CNN "Component"
 	1    8200 3000
 	1    0    0    -1  
 $EndComp
