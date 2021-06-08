@@ -42,6 +42,9 @@ fp-info-cache
 *.xml
 *.csv
 
+# Step files
+*.step
+
 ### KiCad Patch ###
 rescue-backup/
 
