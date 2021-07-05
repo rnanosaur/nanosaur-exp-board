@@ -6,10 +6,10 @@ encoding utf-8
 Sheet 1 1
 Title "Expansion board"
 Date ""
-Rev "1"
+Rev "1.1"
 Comp "nanosaur"
 Comment1 "Raffaello Bonghi"
-Comment2 ""
+Comment2 "https://nanosaur.ai/"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -189,10 +189,6 @@ Connection ~ 5300 4900
 NoConn ~ 5950 3850
 NoConn ~ 5950 3950
 NoConn ~ 5950 4150
-Wire Wire Line
-	5950 2600 6850 2600
-Wire Wire Line
-	5950 2700 6950 2700
 $Comp
 L power:GND #PWR0111
 U 1 1 60954289
@@ -265,7 +261,7 @@ U 1 1 6095C636
 P 7550 4750
 F 0 "R1" H 7620 4796 50  0000 L CNN
 F 1 "1k" H 7620 4705 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7480 4750 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7480 4750 50  0001 C CNN
 F 3 "~" H 7550 4750 50  0001 C CNN
 F 4 "Resistor THT 1/4W" H 7550 4750 50  0001 C CNN "Component"
 	1    7550 4750
@@ -277,7 +273,7 @@ U 1 1 6095E0C2
 P 7800 4750
 F 0 "R2" H 7870 4796 50  0000 L CNN
 F 1 "1k" H 7870 4705 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7730 4750 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7730 4750 50  0001 C CNN
 F 3 "~" H 7800 4750 50  0001 C CNN
 F 4 "Resistor THT 1/4W" H 7800 4750 50  0001 C CNN "Component"
 	1    7800 4750
@@ -313,7 +309,7 @@ F 0 "J6" H 8280 5242 50  0000 L CNN
 F 1 "Conn_buttons" H 8280 5151 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8200 5200 50  0001 C CNN
 F 3 "~" H 8200 5200 50  0001 C CNN
-F 4 "cable 1x3 length 220mm" H 8200 5200 50  0001 C CNN "Component"
+F 4 "cable 1x3 length 300mm" H 8200 5200 50  0001 C CNN "Component"
 	1    8200 5200
 	1    0    0    -1  
 $EndComp
@@ -480,7 +476,7 @@ F 0 "J5" H 8280 3742 50  0000 L CNN
 F 1 "Conn_motors" H 8280 3651 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 8200 3750 50  0001 C CNN
 F 3 "~" H 8200 3750 50  0001 C CNN
-F 4 "cable 1x6 length 180mm" H 8200 3750 50  0001 C CNN "Component"
+F 4 "cable 1x6 length 210mm" H 8200 3750 50  0001 C CNN "Component"
 	1    8200 3750
 	1    0    0    -1  
 $EndComp
@@ -584,10 +580,6 @@ F 3 "" H 7750 1900 50  0001 C CNN
 	1    7750 1900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6950 1700 8000 1700
-Wire Wire Line
-	6850 1600 8000 1600
 $Comp
 L Connector_Generic:Conn_01x04 J4
 U 1 1 60940252
@@ -596,7 +588,7 @@ F 0 "J4" H 8280 2342 50  0000 L CNN
 F 1 "Conn_i2c_oled" H 8280 2251 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 2350 50  0001 C CNN
 F 3 "~" H 8200 2350 50  0001 C CNN
-F 4 "cable 1x4 length 200mm" H 8200 2350 50  0001 C CNN "Component"
+F 4 "cable 1x4 length 300mm" H 8200 2350 50  0001 C CNN "Component"
 	1    8200 2350
 	1    0    0    -1  
 $EndComp
@@ -608,7 +600,7 @@ F 0 "J3" H 8280 1692 50  0000 L CNN
 F 1 "Conn_i2c_oled" H 8280 1601 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 1700 50  0001 C CNN
 F 3 "~" H 8200 1700 50  0001 C CNN
-F 4 "cable 1x4 length 200mm" H 8200 1700 50  0001 C CNN "Component"
+F 4 "cable 1x4 length 300mm" H 8200 1700 50  0001 C CNN "Component"
 	1    8200 1700
 	1    0    0    -1  
 $EndComp
@@ -656,10 +648,6 @@ Wire Wire Line
 	7050 2250 7050 2900
 Wire Wire Line
 	7150 2350 7150 3000
-Wire Wire Line
-	6950 1700 6950 2700
-Wire Wire Line
-	6850 1600 6850 2600
 $Comp
 L power:+3V3 #PWR0120
 U 1 1 60A7EA86
@@ -875,4 +863,16 @@ BC AD 23 43 2E 6D A8 C1 07 92 82 94 76 63 0D 15 0E 6A CC CE 98 82 61 DB 3A 97 66
 53 9F B3 0C 8E 7E 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
+Wire Wire Line
+	6950 1700 8000 1700
+Wire Wire Line
+	6850 1600 8000 1600
+Wire Wire Line
+	6950 1700 6950 2700
+Wire Wire Line
+	5950 2700 6950 2700
+Wire Wire Line
+	5950 2600 6850 2600
+Wire Wire Line
+	6850 1600 6850 2600
 $EndSCHEMATC
