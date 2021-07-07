@@ -61,7 +61,7 @@ jobs:
         with:
           name: docs
       - name: Push SVG images
-        uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+        uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
@@ -72,7 +72,7 @@ jobs:
           user_name: 'rbonghi'
           commit_message: '🚀 Push updated images NanoSaur expansion board'
       - name: Push CSV BOM
-        uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+        uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
