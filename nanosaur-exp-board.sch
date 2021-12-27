@@ -22,6 +22,7 @@ F 1 "Screw_Terminal_01x02" V 1600 2400 50  0000 R CNN
 F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal" H 1450 2000 50  0001 C CNN
 F 3 "~" H 1450 2000 50  0001 C CNN
 F 4 "Terminal block 1x02 - 2.54mm" H 1450 2000 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/1005001894448937.html" H 1450 2000 50  0001 C CNN "URL"
 	1    1450 2000
 	0    -1   -1   0   
 $EndComp
@@ -248,6 +249,7 @@ F 1 "SW_SPDT" H 2300 2494 50  0000 C CNN
 F 2 "Button_Switch:slide_switch_4.7mm" H 2300 2300 50  0001 C CNN
 F 3 "~" H 2300 2300 50  0001 C CNN
 F 4 "Slide switch P4.7mm" H 2300 2300 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/32723955831.html" H 2300 2300 50  0001 C CNN "URL"
 	1    2300 2300
 	1    0    0    -1  
 $EndComp
@@ -365,6 +367,7 @@ F 1 "jetson_nano" H 5650 2400 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 5300 3250 50  0001 C CNN
 F 3 "~" H 5300 3250 50  0001 C CNN
 F 4 "PinHeader 2x20 - P2.54mm" H 5050 3550 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/33036974240.html" H 5050 3550 50  0001 C CNN "URL"
 	1    5050 3550
 	1    0    0    -1  
 $EndComp
