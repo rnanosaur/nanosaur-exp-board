@@ -22,7 +22,7 @@ F 1 "Screw_Terminal_01x02" V 1600 2400 50  0000 R CNN
 F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal" H 1450 2000 50  0001 C CNN
 F 3 "~" H 1450 2000 50  0001 C CNN
 F 4 "Terminal block 1x02 - 2.54mm" H 1450 2000 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/1005001894448937.html" H 1450 2000 50  0001 C CNN "URL"
+F 5 "https://www.aliexpress.com/item/1005001894448937.html" H 1450 2000 50  0001 C CNN "Note"
 	1    1450 2000
 	0    -1   -1   0   
 $EndComp
@@ -249,7 +249,7 @@ F 1 "SW_SPDT" H 2300 2494 50  0000 C CNN
 F 2 "Button_Switch:slide_switch_4.7mm" H 2300 2300 50  0001 C CNN
 F 3 "~" H 2300 2300 50  0001 C CNN
 F 4 "Slide switch P4.7mm" H 2300 2300 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/32723955831.html" H 2300 2300 50  0001 C CNN "URL"
+F 5 "https://www.aliexpress.com/item/32723955831.html" H 2300 2300 50  0001 C CNN "Note"
 	1    2300 2300
 	1    0    0    -1  
 $EndComp
@@ -266,7 +266,7 @@ F 1 "1k" H 7620 4705 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7480 4750 50  0001 C CNN
 F 3 "~" H 7550 4750 50  0001 C CNN
 F 4 "Resistor THT 1/4W (optional*)" H 7550 4750 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/1005003629359182.html" H 7550 4750 50  0001 C CNN "URL"
+F 5 "https://www.aliexpress.com/item/1005003629359182.html" H 7550 4750 50  0001 C CNN "Note"
 	1    7550 4750
 	1    0    0    -1  
 $EndComp
@@ -279,7 +279,7 @@ F 1 "1k" H 7870 4705 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7730 4750 50  0001 C CNN
 F 3 "~" H 7800 4750 50  0001 C CNN
 F 4 "Resistor THT 1/4W (optional*)" H 7800 4750 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/1005003629359182.html" H 7800 4750 50  0001 C CNN "URL"
+F 5 "https://www.aliexpress.com/item/1005003629359182.html" H 7800 4750 50  0001 C CNN "Note"
 	1    7800 4750
 	1    0    0    -1  
 $EndComp
@@ -314,8 +314,7 @@ F 1 "Conn_buttons" H 8280 5151 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8200 5200 50  0001 C CNN
 F 3 "~" H 8200 5200 50  0001 C CNN
 F 4 "cable 1x3 length 300mm" H 8200 5200 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 5200 50  0001 C CNN "URL"
-F 6 "Read documentation" H 8200 5200 50  0001 C CNN "Note"
+F 5 "Read Table connectors" H 8200 5200 50  0001 C CNN "Note"
 	1    8200 5200
 	1    0    0    -1  
 $EndComp
@@ -371,7 +370,7 @@ F 1 "jetson_nano" H 5650 2400 50  0000 L CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 5300 3250 50  0001 C CNN
 F 3 "~" H 5300 3250 50  0001 C CNN
 F 4 "PinHeader 2x20 - P2.54mm" H 5050 3550 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/33036974240.html" H 5050 3550 50  0001 C CNN "URL"
+F 5 "https://www.aliexpress.com/item/33036974240.html" H 5050 3550 50  0001 C CNN "Note"
 	1    5050 3550
 	1    0    0    -1  
 $EndComp
@@ -484,8 +483,7 @@ F 1 "Conn_motors" H 8280 3651 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 8200 3750 50  0001 C CNN
 F 3 "~" H 8200 3750 50  0001 C CNN
 F 4 "cable 1x6 length 210mm" H 8200 3750 50  0001 C CNN "Component"
-F 5 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 3750 50  0001 C CNN "URL"
-F 6 "Read documentation" H 8200 3750 50  0001 C CNN "Note"
+F 5 "Read Table connectors" H 8200 3750 50  0001 C CNN "Note"
 	1    8200 3750
 	1    0    0    -1  
 $EndComp
@@ -598,8 +596,7 @@ F 1 "Conn_i2c_oled" H 8280 2251 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 2350 50  0001 C CNN
 F 3 "~" H 8200 2350 50  0001 C CNN
 F 4 "cable 1x4 length 300mm" H 8200 2350 50  0001 C CNN "Component"
-F 5 "Read documentation" H 8200 2350 50  0001 C CNN "Note"
-F 6 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 2350 50  0001 C CNN "URL"
+F 5 "Read Table connectors" H 8200 2350 50  0001 C CNN "Note"
 	1    8200 2350
 	1    0    0    -1  
 $EndComp
@@ -612,8 +609,7 @@ F 1 "Conn_i2c_oled" H 8280 1601 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 1700 50  0001 C CNN
 F 3 "~" H 8200 1700 50  0001 C CNN
 F 4 "cable 1x4 length 300mm" H 8200 1700 50  0001 C CNN "Component"
-F 5 "Read documentation" H 8200 1700 50  0001 C CNN "Note"
-F 6 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 1700 50  0001 C CNN "URL"
+F 5 "Read Table connectors" H 8200 1700 50  0001 C CNN "Note"
 	1    8200 1700
 	1    0    0    -1  
 $EndComp
