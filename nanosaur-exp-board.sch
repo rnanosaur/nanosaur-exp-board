@@ -265,7 +265,8 @@ F 0 "R1" H 7620 4796 50  0000 L CNN
 F 1 "1k" H 7620 4705 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7480 4750 50  0001 C CNN
 F 3 "~" H 7550 4750 50  0001 C CNN
-F 4 "Resistor THT 1/4W" H 7550 4750 50  0001 C CNN "Component"
+F 4 "Resistor THT 1/4W (optional*)" H 7550 4750 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/1005003629359182.html" H 7550 4750 50  0001 C CNN "URL"
 	1    7550 4750
 	1    0    0    -1  
 $EndComp
@@ -277,7 +278,8 @@ F 0 "R2" H 7870 4796 50  0000 L CNN
 F 1 "1k" H 7870 4705 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7730 4750 50  0001 C CNN
 F 3 "~" H 7800 4750 50  0001 C CNN
-F 4 "Resistor THT 1/4W" H 7800 4750 50  0001 C CNN "Component"
+F 4 "Resistor THT 1/4W (optional*)" H 7800 4750 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/1005003629359182.html" H 7800 4750 50  0001 C CNN "URL"
 	1    7800 4750
 	1    0    0    -1  
 $EndComp
@@ -312,6 +314,8 @@ F 1 "Conn_buttons" H 8280 5151 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8200 5200 50  0001 C CNN
 F 3 "~" H 8200 5200 50  0001 C CNN
 F 4 "cable 1x3 length 300mm" H 8200 5200 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 5200 50  0001 C CNN "URL"
+F 6 "Read documentation" H 8200 5200 50  0001 C CNN "Note"
 	1    8200 5200
 	1    0    0    -1  
 $EndComp
@@ -480,6 +484,8 @@ F 1 "Conn_motors" H 8280 3651 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 8200 3750 50  0001 C CNN
 F 3 "~" H 8200 3750 50  0001 C CNN
 F 4 "cable 1x6 length 210mm" H 8200 3750 50  0001 C CNN "Component"
+F 5 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 3750 50  0001 C CNN "URL"
+F 6 "Read documentation" H 8200 3750 50  0001 C CNN "Note"
 	1    8200 3750
 	1    0    0    -1  
 $EndComp
@@ -592,6 +598,8 @@ F 1 "Conn_i2c_oled" H 8280 2251 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 2350 50  0001 C CNN
 F 3 "~" H 8200 2350 50  0001 C CNN
 F 4 "cable 1x4 length 300mm" H 8200 2350 50  0001 C CNN "Component"
+F 5 "Read documentation" H 8200 2350 50  0001 C CNN "Note"
+F 6 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 2350 50  0001 C CNN "URL"
 	1    8200 2350
 	1    0    0    -1  
 $EndComp
@@ -604,6 +612,8 @@ F 1 "Conn_i2c_oled" H 8280 1601 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 8200 1700 50  0001 C CNN
 F 3 "~" H 8200 1700 50  0001 C CNN
 F 4 "cable 1x4 length 300mm" H 8200 1700 50  0001 C CNN "Component"
+F 5 "Read documentation" H 8200 1700 50  0001 C CNN "Note"
+F 6 "https://www.aliexpress.com/item/1005003596191061.html" H 8200 1700 50  0001 C CNN "URL"
 	1    8200 1700
 	1    0    0    -1  
 $EndComp
