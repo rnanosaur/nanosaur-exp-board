@@ -51,6 +51,7 @@ usage()
 main()
 {
     local zip_name=gerber.zip
+    local path="docs/docs/gerber"
     local SILENT=false
 	# Decode all information from startup
     while [ -n "$1" ]; do
@@ -81,10 +82,8 @@ main()
     fi
 
     local pwd=$(pwd)
-
-    local path="docs/docs/gerber"
     
-    echo "Make zip with all gerber files"
+    echo "Make zip $zip_name with all gerber files"
     # echo $(ls -p $path | grep -v / )
     cd $path
     # Show documents
@@ -93,7 +92,8 @@ main()
     sudo zip -r -D $zip_name .
     # Move to main folder
     sudo mv $zip_name $pwd/docs/docs
-
+    # return start folder
+    cd $pwd
 }
 
 
