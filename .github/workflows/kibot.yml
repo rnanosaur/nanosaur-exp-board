@@ -42,7 +42,7 @@ jobs:
         echo "--docs/docs/pdf"
         cd docs/docs/pdf
         ls -la
-        mv combined.pdf nanosaur-schematic.pdf
+        sudo mv combined.pdf nanosaur-schematic.pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
