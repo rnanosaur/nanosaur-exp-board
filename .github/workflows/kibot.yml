@@ -45,6 +45,8 @@ jobs:
         ls docs
         echo "--docs/docs"
         ls docs/docs
+        echo "--docs/docs/pdf"
+        ls -la docs/docs/pdf
         mv docs/docs/pdf/combined.pdf docs/docs/pdf/nanosaur-schematic.pdf
     - name: upload results
       uses: actions/upload-artifact@v2
