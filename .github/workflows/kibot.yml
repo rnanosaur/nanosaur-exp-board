@@ -39,15 +39,10 @@ jobs:
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
         TERM=xterm bash gerberzip.sh -n nanosaur-gerber.zip
-        echo "--"
-        ls 
-        echo "--docs"
-        ls docs
-        echo "--docs/docs"
-        ls docs/docs
         echo "--docs/docs/pdf"
-        ls -la docs/docs/pdf
-        mv docs/docs/pdf/combined.pdf docs/docs/pdf/nanosaur-schematic.pdf
+        cd docs/docs/pdf
+        ls -la
+        mv combined.pdf nanosaur-schematic.pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
