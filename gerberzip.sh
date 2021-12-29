@@ -44,6 +44,7 @@ usage()
     echo "options,"
     echo "   -h|--help            | This help"
     echo "   -s|--silent          | Run this script silent"
+    echo "   -n|--name            | zip file name [Default: gerber.zip]"
 }
 
 
@@ -60,6 +61,10 @@ main()
                 ;;
             -s|--silent)
                 SILENT=true
+                ;;
+            -n|--name)
+                zip_name=$2
+                shift 1
                 ;;
             *)
                 usage "[ERROR] Unknown option: $1"

@@ -42,7 +42,8 @@ jobs:
         path: docs/docs/pdf
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
-        bash gerberzip.sh
+        bash gerberzip.sh -n nanosaur-gerber.zip
+        mv docs/docs/pdf/combined.pdf docs/docs/pdf/nanosaur-schematic.pdf
     - name: upload results
       uses: actions/upload-artifact@v2
       with:
@@ -60,6 +61,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: docs
+      # https://github.com/dmnemec/copy_file_to_another_repo_action
       - name: Push SVG images
         uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
         env:
@@ -67,6 +69,7 @@ jobs:
         with:
           source_file: 'docs/expansion-board'
           destination_repo: 'rnanosaur/rnanosaur.github.io'
+          destination_branch: 'master'
           destination_folder: 'assets/docs'
           user_email: 'raffaello@rnext.it'
           user_name: 'rbonghi'
@@ -78,61 +81,39 @@ jobs:
         with:
           source_file: 'nanosaur-exp-board.csv'
           destination_repo: 'rnanosaur/rnanosaur.github.io'
+          destination_branch: 'master'
           destination_folder: '_data'
           user_email: 'raffaello@rnext.it'
           user_name: 'rbonghi'
           commit_message: '🚀 Push updated BOM NanoSaur expansion board'
 
   release:
-    name: release version
+    name: Upload release
     if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
     needs: [export]
-    runs-on: ubuntu-latest #self-hosted
     steps:
+    - name: Extract tag name
+      id: extract_tag
+      shell: bash
+      run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
       # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
-      - name: Extract artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: docs
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-      - name: Upload Release PDF Asset
-        id: upload-release-pdf-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`.
-          # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./docs/pdf/combined.pdf
-          asset_name: nanosaur-schematic.pdf
-          asset_content_type: application/pdf
-      - name: Upload Release STEP Asset
-        id: upload-release-step-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./docs/CAD/nanosaur-exp-board.step
-          asset_name: nanosaur-exp-board.step
-          asset_content_type: application/step
-      - name: Upload Release gerber.zip Asset
-        id: upload-release-gerber-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./docs/gerber.zip
-          asset_name: nanosaur-gerber.zip
-          asset_content_type: application/zip
+    - name: Extract artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: docs
+      # https://github.com/softprops/action-gh-release
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ github.ref }}
+        name: Release ${{ steps.extract_tag.outputs.tag }}
+        generate_release_notes: true
+        draft: false
+        prerelease: false
+        files: |
+          docs/pdf/nanosaur-schematic.pdf
+          docs/CAD/nanosaur-exp-board.step
+          docs/nanosaur-gerber.zip
+
