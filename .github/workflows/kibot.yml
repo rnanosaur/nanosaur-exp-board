@@ -42,7 +42,7 @@ jobs:
         echo "Rename combined.pdf"
         sudo mv docs/docs/pdf/combined.pdf docs/docs/pdf/nanosaur-schematic.pdf
     - name: upload results
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: docs
         path: docs
