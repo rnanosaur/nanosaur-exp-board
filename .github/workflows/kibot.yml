@@ -55,7 +55,7 @@ jobs:
     steps:
       # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
       - name: Extract artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: docs
       # https://github.com/dmnemec/copy_file_to_another_repo_action
@@ -96,7 +96,7 @@ jobs:
       run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
       # https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
     - name: Extract artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: docs
       # https://github.com/softprops/action-gh-release
